@@ -1,0 +1,10 @@
+.vscode/**
+.vscode-test/**
+dist/**
+src/**
+tsconfig.json
+eslint.config.mjs
+webpack.config.js
+*.ts
+*.map
+node_modules/**

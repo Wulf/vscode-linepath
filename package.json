@@ -1,0 +1,50 @@
+{
+  "name": "linepath",
+  "displayName": "LinePath",
+  "description": "Copy relative or absolute filepaths with line numbers.",
+  "version": "0.0.1",
+  "publisher": "wulf",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Wulf/vscode-linepath.git"
+  },
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:linepath.copyRelativeFilepath",
+    "onCommand:linepath.copyAbsoluteFilepath"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "linepath.copyRelativeFilepath",
+        "title": "LinePath: Copy Relative Filepath"
+      },
+      {
+        "command": "linepath.copyAbsoluteFilepath",
+        "title": "LinePath: Copy Absolute Filepath"
+      }
+    ]
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "package": "npm run compile && vsce package --no-dependencies --out linepath-${npm_package_version}.vsix && mv linepath-${npm_package_version}.vsix dist/linepath-${npm_package_version}.vsix",
+    "vscode:prepublish": "npm run compile"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/vscode": "^1.85.0",
+    "@typescript-eslint/eslint-plugin": "^8.0.0",
+    "@typescript-eslint/parser": "^8.0.0",
+    "eslint": "^9.0.0",
+    "typescript": "^5.0.0",
+    "typescript-eslint": "^8.71.1",
+    "@vscode/vsce": "^3.6.0"
+  }
+}
