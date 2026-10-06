@@ -2,6 +2,14 @@
 
 Copy the current file path with line numbers from VS Code.
 
+## Quickstart
+
+On macOS, Linux, Git Bash, or WSL:
+
+```sh
+curl -fsSL https://raw.githubusercontent.com/Wulf/vscode-linepath/main/scripts/install-vsix.sh | bash
+```
+
 Commands:
 
 - `LinePath: Copy Relative Filepath`
