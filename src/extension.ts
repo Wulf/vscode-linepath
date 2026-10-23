@@ -4,15 +4,16 @@ type PathFormat = 'relative' | 'absolute';
 
 function lineSuffix(editor: vscode.TextEditor): string {
   return editor.selections
-    .map((selection) => {
+    .map((selection, index) => {
       const firstLine = selection.start.line + 1;
       const lastLine = selection.isEmpty
         ? firstLine
         : selection.end.line + (selection.end.character === 0 ? 0 : 1);
+      const prefix = index === 0 ? ':' : '';
 
       return firstLine === lastLine
-        ? `:${firstLine}`
-        : `:${firstLine}-${lastLine}`;
+        ? `${prefix}${firstLine}`
+        : `${prefix}${firstLine}-${lastLine}`;
     })
     .join(',');
 }
