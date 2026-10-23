@@ -6,7 +6,9 @@ function lineSuffix(editor: vscode.TextEditor): string {
   return editor.selections
     .map((selection) => {
       const firstLine = selection.start.line + 1;
-      const lastLine = selection.isEmpty ? firstLine : selection.end.line + 1;
+      const lastLine = selection.isEmpty
+        ? firstLine
+        : selection.end.line + (selection.end.character === 0 ? 0 : 1);
 
       return firstLine === lastLine
         ? `:${firstLine}`

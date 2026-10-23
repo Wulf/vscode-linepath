@@ -2,7 +2,7 @@
   "name": "linepath",
   "displayName": "LinePath",
   "description": "Copy relative or absolute filepaths with line numbers.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "publisher": "wulf",
   "repository": {
     "type": "git",
